@@ -1,11 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
-  const prevBtn = document.createElement('button');
-  prevBtn.textContent = 'Previous';
-  prevBtn.id = 'prev-btn';
-  
-  const nextBtn = document.createElement('button');
-  nextBtn.textContent = 'Next';
-  nextBtn.id = 'next-btn';
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
   
   const readingList = document.querySelector('.reading-list');
   readingList.insertAdjacentElement('beforebegin', prevBtn);
@@ -14,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function(){
   let scrollPosition = 0;
   
   prevBtn.addEventListener('click', () => {
-    scrollPosition -= 300; // Adjust the scrolling amount as needed
+    scrollPosition -= 300; 
     readingList.scroll(scrollPosition, 0);
   });
   
   nextBtn.addEventListener('click', () => {
-    scrollPosition += 300; // Adjust the scrolling amount as needed
+    scrollPosition += 300;
     readingList.scroll(scrollPosition, 0);
   });
   
@@ -129,4 +124,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
   displayBooks();
 
+
+// TODO: add other functions to store the books on the page , remove and update
 });

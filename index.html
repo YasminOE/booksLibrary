@@ -39,6 +39,11 @@
     </div>
 
     <div class="reading-list">
+      <!-- TODO: previous and next button to the books list -->
+      <!-- <div class="navigation-button prev-button">
+        <button id="prev-btn"><span class="material-symbols-outlined">arrow_back_ios</span></button>
+      </div> -->
+
       <div class="book-content">
         <div class="img-container"><img class="book-img" src="./img/ALittleLife.jpg" alt="Book Image" id="book-image" class="book-img"></div>
         <ul class="book-info">
@@ -51,15 +56,19 @@
       <div class="book-content">
         <div class="img-container"><img src="./img/thepowerofnow.jpg" alt="Book Image" id="book-image" class="book-img"></div>
         <ul class="book-info">
-          <li id="book-tittle">A Little Life</li>
-          <li id="book-author">Hanya Yanagihara</li>
-          <li id="book-pages">814 pages</li>
-          <li id="book-status">Not read</li>
+          <li id="book-tittle">The Power of now</li>
+          <li id="book-author">Eckhart Tolle</li>
+          <li id="book-pages">258 pages</li>
+          <li id="book-status">Not Read</li>
         </ul>
       </div>
+
+      <!-- <div class="navigation-button next-button">
+        <button id="next-btn"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+      </div> -->
+    
   </div>
   <div class="new-release">
-    <div id="dialog-wrapper">
       <dialog id='new-book'>
         <label for="upload">Book image</label>
         <input type = "file" name = "upload" accept = "image/*" />
@@ -73,17 +82,24 @@
         <label for="pages">Book Pages</label>
         <input type="number" name="pages" id="added-pages">
   
-        <label for="readingStatus">Did you read it?</label>
-        <insput type="radio" class="reading-status" name="readingStatus" value="read"><label for="readingStatus">Read</label>
-        <input type="radio" class="reading-status"  name="readingStatus" value="not-read"> <label for="readingStatus">Not Read</label>
-        <button id="add" type="submit">Add</button>
-        <button id="hide" type="submit">close</button>
+        <label for="readingStatus">Progress</label>
+        <div class="reading-progress">
+          <input type="radio" name="readingStatus" value="read"><label class="reading-status" for="readingStatus">Read</label>
+        </div>
+        <div class="reading-progress">
+          <input type="radio" name="readingStatus" value="not-read"> <label class="reading-status" for="readingStatus">Not Read</label>
+        </div>
+        
+        <div class="adding-buttons">
+
+          <button id="add" type="submit"><span class="material-symbols-outlined">add</span></button>
+          <button id="hide" type="submit"><span class="material-symbols-outlined">close</span></button>
+        </div>
   
       </dialog>
-    </div>
   </div>
 </div>
-<footer>&copy; 2021 Kindle Library, Inc.</footer>
+<footer>&copy; 2023 Kindle Library, Inc.</footer>
 
   <script src="./app.js"></script>
 </body>

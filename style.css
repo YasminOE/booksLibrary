@@ -18,8 +18,9 @@ div.container{
   border: 7px solid #f99823;
   border-radius: 50px;
   margin: 60px;
-  height: 90vh;
+  height: 100vh;
   column-gap: 10px;
+  overflow: scroll;
 }
 
 div.nav{
@@ -119,9 +120,6 @@ div.nav > .profile-navBar{
   }
 
 div.header{
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
   display: grid;
   grid-template-columns: 2fr 10fr;
   grid-template-rows: auto ;
@@ -134,6 +132,7 @@ div.header{
 
 div.header > .header-name{
   text-align: left ;
+  grid-area: header-name;
   font-size: 3rem;
   font-weight: 700;
   margin: 30px;
@@ -149,34 +148,36 @@ div.header > input{
   align-items: center;
 }
 div.header > input#search-bar{
+  grid-area: header-search ;
   position: relative;
-  padding: 10px 58px;
-  margin: 30px 100px auto;
+  padding: 0px 38px;
+  margin: 30px 10px;
   border-radius: 30px;
   background-color: #ffffff;
   border: 2px solid #f7f6f2;
   font-size: 1rem;
+  width: 800px;
 }
 div.header > input#search-bar:focus{
   border: 1px solid #f99823;
-  padding-inline: 66px;
+  padding-inline: 50px;
   transition: 1s ease;
  }
 div.header > button.search-button{
+  grid-area: header-search;
   cursor: pointer;
   position: relative;
-  right: 156px;
+  left: 838px;
   top: 36px;
-  height: 30px;
+  height: 40px;
   width: 40px;
   border-radius: 30px;
   border: none;
   background-image: none
-
 }
 div.header > button.search-button > span{
   color: #bdbdbd;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   background-color: none;
 }
 
@@ -185,6 +186,7 @@ div.header > button.search-button > span:hover{
 }
 
 div.header >  ul.header-options {
+  grid-area: header-options;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,7 +219,6 @@ div.reading-list {
   grid-area: readlist;
   grid-template-columns: repeat(4, 3fr);
   grid-template-rows: auto;
-  border: 1px solid red;
   margin: 50px 30px;
   padding: 140px 20px;
   
@@ -225,6 +226,7 @@ div.reading-list {
 
 
 div.reading-list > div.book-content {
+  grid-area: readlist;
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
@@ -249,69 +251,189 @@ div.book-content > ul.book-info{
   left: -30px;
   position: relative;
   /* padding: 0px 120px; */
-  border: 1px solid red;
-  /* background: url("./img/ALittleLife.jpg"); */
-  background-color: rgba(189, 189, 189, 0.8);
-  background-size: cover;
-  /* filter: blur(1px); */
-  transform: translate(-23%, 20%);
-  border-radius: 15px;
-  
+  background: rgba( 233, 232, 230, 0.15 );
+  box-shadow: 0 8px 32px 0 rgb(224, 221, 215);
+  backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur( 20px );
+  border-radius: 10px;
+  border: 1px solid rgba(120, 120, 120, 0.18);
+  transform: translate(-16%, 20%);
+  border-radius: 20px;
+  padding: 20px 20px 20px 0;
 }
+
 ul.book-info{
   display: flex;
   justify-content: flex-start;
   align-self: center;
+  gap: 10px;
 }
+
 ul.book-info > li{
   font-weight: 300;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid red;
-  padding: 0px 120px;
-  background: none;
-  color: #f7f6f2;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background: transparent;
+  color: #090909;
 }
 ul.book-info > li#book-tittle {
   font-weight: 600 ;
   font-size: 1.4rem;
   text-transform: uppercase;
-  background: inherit;
+  background: transparent;
   justify-content: flex-start;
-  padding: 15px;
+  padding: 15px 55px 15px 15px ;
   display: block;
+  color: #f7f6f2;
 }
 
 
 ul.book-info > li#book-author,  ul.book-info > li#book-pages, ul.book-info > li#book-status{
-  padding: 5px;
-  flex: 2 1 10%;
+  font-weight: 500;
+  margin: 10px;
+  flex: 1 1 100px;
+}
+.navigation-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 50px; /* Adjust the width of the navigation buttons */
 }
 
+.prev-button {
+  order: -1; /* Move the previous button to the beginning */
+}
 
- div.new-release {
+.next-button {
+  order: 1; /* Move the next button to the end */
+}
+
+button#prev-btn, button#next-btn{
+  padding: 7px;
+  color: #d5821d;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  background-color: transparent;
+  gap: 30px;
+}
+button#prev-btn >span , button#next-btn > span{
+  background: transparent;
+  color: #f99823;
+}
+div.adding-buttons > button[type="submit"] > span {
+  background: none;
+}
+
+button#prev-btn:hover, button#next-btn:hover {
+  transition: all 0.4s ease;
+  color: #f7f6f2;
+  border: 2px solid #f99823;
+  background-color: #f99823;
+
+}
+button#prev-btn >span:hover , button#next-btn > span:hover{
+  color: #f7f6f2;
+}
+
+div.new-release {
   display: grid;
   grid-area: new-release;
   grid-template-columns: repeat(1, 12fr);
   grid-template-rows: auto;
   padding: 30px;
   margin: 30px;
-  border: 1px solid red;
-  position: relative; /* Add this position property */
+  position: relative;
+  overflow-y: scroll;/* Add this position property */
+  background: rgba(233, 232, 230, 0.15);
+  box-shadow: 0 8px 32px 0 rgb(224, 221, 215);
+  backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur( 20px );
+  border-radius: 20px;
+
 }
 
-/* Add this style to position the dialog */
-#dialog-wrapper {
-  grid-column: 1;
-  grid-row: 1;
-  position: relative;
-  /* top: 50%; */
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
-  display: flex;
-  flex-direction: column;
+dialog#new-book{
+  border: 2px solid #f99823;
+  border-radius: 10px;
+  font-family: 'Jost', sans-serif;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 50px;
+  margin: 50px auto;
+  width: 50%;
+  
+}
+dialog#new-book > label{
+  font-size: 1.1rem;
+  font-weight: 100;
+  padding: 15px 0;
+  display: block;
+}
+input[type="text"] , input[type="number"] ,input[type="file"]{
+  flex: 1 1 20px;
+  padding: 15px;
+  border: 1px solid #f99823;
+  border-radius: 10px;
+  align-items: center;
+  width: 90%; 
+}
+input::file-selector-button {
+  font-size: 0.7rem;
+  padding: 7px;
+  margin-right: 10px;
+  border: 2px solid #e6decf;
+  border-radius: 10px;
+  border: 10px;
+  cursor: pointer;
+  color: #f7f6f2;
+  background-color: #d5821d;
+
+}
+
+div.reading-progress {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* reading-status */
+
+div.adding-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+div.adding-buttons > button[type="submit"]{
+  padding: 7px 50px;
+  color: #d5821d;
+  cursor: pointer;
+  border: 2px solid #f99823;
+  border-radius: 15px;
+  background-color: transparent;
+  gap: 30px;
+}
+
+div.adding-buttons > button[type="submit"]:nth-child(1):hover{
+  transition: all 0.4s ease;
+  color: #f7f6f2;
+  border: 2px solid #f99823;
+  background-color: #f99823;
+}
+div.adding-buttons > button[type="submit"]:nth-child(2):hover {
+  transition: all 0.4s ease;
+  color: #f7f6f2;
+  border: 2px solid #f95123;
+  background-color: #f95123;
+}
+
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 50px;
 }
