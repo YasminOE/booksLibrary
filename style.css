@@ -1,0 +1,317 @@
+*{
+  background-color: #F7F6F4;
+  font-family: 'Jost', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+div.container{
+  display: grid;
+  grid-template-columns: 1fr 11fr ;
+  grid-template-rows: 2fr 5fr 5fr;
+  grid-template-areas: 
+    "profile header header header"
+    "profile readlist readlist readlist"
+    "profile new-release new-release new-release";
+
+  border: 7px solid #f99823;
+  border-radius: 50px;
+  margin: 60px;
+  height: 90vh;
+  column-gap: 10px;
+}
+
+div.nav{
+  /* display: grid; */
+  grid-area: profile / profile / profile;
+  grid-row: 1fr auto;
+  grid-column: auto;
+  /* border:  1px solid rgb(52, 52, 51); */
+  /* background-image:  linear-gradient(to top left, #d2b795, #f99823, #DBD0BC); */
+  border-radius: 40px;
+
+}
+
+div.profile-pic{
+  display: grid;
+  grid-area: profile;
+  background-image: linear-gradient(to bottom right, #E9E8E6, #DCD5CB, #DBD0BC);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0 ;
+  padding: 20px;
+  border-radius: 0 50px 50px 0;
+  width: 250px;
+  height: 300px;
+  
+}
+div.profile-pic > img{
+  flex: 1;
+  width: auto;
+  height: 40%;
+  border-radius: 190px;
+  /* padding: 10px; */
+  margin: 50px;
+  background-color: inherit;
+}
+
+div.profile-pic > img:hover{
+  transition: 1s ease;
+  transform: scale(width, height);
+  opacity: 0.7;
+  border: 3px solid #090909;
+}
+
+div.nav p.profile-welcome{
+  background-image: linear-gradient(to bottom right, #DCD5CB, #DBD0BC);
+  color: #090909;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 10px 0;
+  position: relative;
+  top: -50px;
+
+}
+
+
+
+div.nav > .profile-navBar{
+  display: grid;
+  grid-area: profile;
+  list-style: none; 
+  margin-top: 70px;
+
+}
+
+ div.nav > ul.profile-navBar li{
+   margin: 10px;
+   padding: 20px;
+   font-weight: 500;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: row;
+   gap: 7px;
+   
+  }
+
+  div.nav > ul.profile-navBar li:hover{
+    color: #f99823;
+    font-weight: 600;
+    font-size: 1.3;
+    padding-bottom: 25px;
+    transition: 1ms ease;
+  }
+
+
+  div.nav > img.amazon-logo{
+    display: grid;
+    grid-row: 4 /3;
+    grid-column:auto;
+    grid-area: profile;
+    max-width: 40%;
+    height: auto;
+    margin: 0  70px;
+
+  }
+
+div.header{
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: auto ;
+  grid-template-areas: "header-name header-search header-search header-options";
+  border: 1px solid rgb(52, 52, 51);
+  align-content:center;
+  border-radius: 40px;
+  margin-top: inherit;
+}
+
+div.header > .header-name{
+  text-align: left ;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 30px;
+}
+div.header > .header-name:hover{
+  color: #f99823;
+  cursor: pointer;
+  font-size: 3.2rem;
+  transition: 1s ease;
+
+}
+div.header > input{
+  align-items: center;
+}
+div.header > input#search-bar{
+  position: relative;
+  padding: 10px 58px;
+  margin: 30px 100px auto;
+  border-radius: 30px;
+  background-color: #ffffff;
+  border: 2px solid #f7f6f2;
+  font-size: 1rem;
+}
+div.header > input#search-bar:focus{
+  border: 1px solid #f99823;
+  padding-inline: 66px;
+  transition: 1s ease;
+ }
+div.header > button.search-button{
+  cursor: pointer;
+  position: relative;
+  right: 156px;
+  top: 36px;
+  height: 30px;
+  width: 40px;
+  border-radius: 30px;
+  border: none;
+  background-image: none
+
+}
+div.header > button.search-button > span{
+  color: #bdbdbd;
+  font-size: 1.3rem;
+  background-color: none;
+}
+
+div.header > button.search-button > span:hover{
+  color: #f99823;
+}
+
+div.header >  ul.header-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  list-style: none;
+  border-radius: inherit;
+  gap:10px;
+  margin: 0 10px;
+  font-weight: 400;
+
+}
+div.header >  ul.header-options li:hover{
+  color: #f99823;
+  font-weight: 600;
+  /* box-shadow: inset -1em -.5em .5em rgba(255, 255, 255); */
+}
+
+ul.header-options > li {
+  width: 80px;
+}
+
+ul.header-options > li > span {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+div.reading-list {
+  display: flex;
+  overflow-x: scroll;
+  grid-area: readlist;
+  grid-template-columns: repeat(4, 3fr);
+  grid-template-rows: auto;
+  border: 1px solid red;
+  margin: 50px 30px;
+  padding: 140px 20px;
+  
+}
+
+
+div.reading-list > div.book-content {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex: 0 0 220px; /* Set the width of each book content */
+  margin-right: 20px;
+  align-items: center;
+}
+
+div.book-content > .img-container{
+  margin: 10px;
+  
+}
+div.book-content > .img-container > img{
+  position: relative;
+  width: auto;
+  height: 170px;
+  border-radius: 10px;
+}
+
+div.book-content > ul.book-info{
+  position: relative;
+  left: -30px;
+  position: relative;
+  /* padding: 0px 120px; */
+  border: 1px solid red;
+  /* background: url("./img/ALittleLife.jpg"); */
+  background-color: rgba(189, 189, 189, 0.8);
+  background-size: cover;
+  /* filter: blur(1px); */
+  transform: translate(-23%, 20%);
+  border-radius: 15px;
+  
+}
+ul.book-info{
+  display: flex;
+  justify-content: flex-start;
+  align-self: center;
+}
+ul.book-info > li{
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  padding: 0px 120px;
+  background: none;
+  color: #f7f6f2;
+}
+ul.book-info > li#book-tittle {
+  font-weight: 600 ;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  background: inherit;
+  justify-content: flex-start;
+  padding: 15px;
+  display: block;
+}
+
+
+ul.book-info > li#book-author,  ul.book-info > li#book-pages, ul.book-info > li#book-status{
+  padding: 5px;
+  flex: 2 1 10%;
+}
+
+
+ div.new-release {
+  display: grid;
+  grid-area: new-release;
+  grid-template-columns: repeat(1, 12fr);
+  grid-template-rows: auto;
+  padding: 30px;
+  margin: 30px;
+  border: 1px solid red;
+  position: relative; /* Add this position property */
+}
+
+/* Add this style to position the dialog */
+#dialog-wrapper {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
