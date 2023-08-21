@@ -1,22 +1,22 @@
 document.addEventListener('DOMContentLoaded', function(){
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
+  // const prevBtn = document.getElementById('prev-btn');
+  // const nextBtn = document.getElementById('next-btn');
   
-  const readingList = document.querySelector('.reading-list');
-  readingList.insertAdjacentElement('beforebegin', prevBtn);
-  readingList.insertAdjacentElement('afterend', nextBtn);
+  // const readingList = document.querySelector('.reading-list');
+  // readingList.insertAdjacentElement('beforebegin', prevBtn);
+  // readingList.insertAdjacentElement('afterend', nextBtn);
   
-  let scrollPosition = 0;
+  // let scrollPosition = 0;
   
-  prevBtn.addEventListener('click', () => {
-    scrollPosition -= 300; 
-    readingList.scroll(scrollPosition, 0);
-  });
+  // prevBtn.addEventListener('click', () => {
+  //   scrollPosition -= 300; 
+  //   readingList.scroll(scrollPosition, 0);
+  // });
   
-  nextBtn.addEventListener('click', () => {
-    scrollPosition += 300;
-    readingList.scroll(scrollPosition, 0);
-  });
+  // nextBtn.addEventListener('click', () => {
+  //   scrollPosition += 300;
+  //   readingList.scroll(scrollPosition, 0);
+  // });
   
   function showDialog(){
     const dialog = document.getElementById('new-book');
