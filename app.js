@@ -124,5 +124,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
   displayBooks();
 
+
 // TODO: add other functions to store the books on the page , remove and update
 });
