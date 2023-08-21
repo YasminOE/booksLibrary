@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Library</title>
+  <link rel="icon" type="image/x-icon" href="./img/tab-icon.svg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <div class="container">
+    <div class="nav">
+      <div class="profile-pic">
+        <img src="./img/profile-pic.jpg" alt="">
+        <p class="profile-welcome">Welcome back!</p>
+      </div>
+      <ul class="profile-navBar">
+        <li id="add-books"><span class="material-symbols-outlined">add</span>Add new book</li>
+        <li><span class="material-symbols-outlined">bookmark</span>Saved</li>
+        <li><span class="material-symbols-outlined">package_2</span>Collections</li>
+        <li><span class="material-symbols-outlined">logout</span>Logout</li>
+      </ul>
+    </div>
+
+    <div class="header">
+    <p class="header-name">Kindle</p>
+    <input type="text" name="search" id="search-bar" placeholder="Search anything..">
+    <button class="search-button"><span class="material-symbols-outlined">search</span></button>
+
+    <ul class="header-options">
+      <li><p class="header-options">Releases</p></li>
+      <li><p class="header-options">Featured</p></li>
+      <li><span class="header-options material-symbols-outlined">apps</span></li>
+    </ul>
+    </div>
+
+    <div class="reading-list">
+      <div class="book-content">
+        <div class="img-container"><img class="book-img" src="/Project-03-Library/img/ALittleLife.jpg" alt="Book Image" id="book-image" class="book-img"></div>
+        <ul class="book-info">
+          <li id="book-tittle">A Little Life</li>
+          <li id="book-author">Hanya Yanagihara</li>
+          <li id="book-pages">814 pages</li>
+          <li id="book-status">Not read</li>
+        </ul>
+      </div>
+      <div class="book-content">
+        <div class="img-container"><img src="/Project-03-Library/img/thepowerofnow.jpg" alt="Book Image" id="book-image" class="book-img"></div>
+        <ul class="book-info">
+          <li id="book-tittle">A Little Life</li>
+          <li id="book-author">Hanya Yanagihara</li>
+          <li id="book-pages">814 pages</li>
+          <li id="book-status">Not read</li>
+        </ul>
+      </div>
+  </div>
+  <div class="new-release">
+    <div id="dialog-wrapper">
+      <dialog id='new-book'>
+        <label for="upload">Book image</label>
+        <input type = "file" name = "upload" accept = "image/*" />
+  
+        <label for="title">Book Title</label>
+        <input type="text" name="title" id="added-book">
+        
+        <label for="author">Book Author</label>
+        <input type="text" name="author" id="added-author">
+        
+        <label for="pages">Book Pages</label>
+        <input type="number" name="pages" id="added-pages">
+  
+        <label for="readingStatus">Did you read it?</label>
+        <insput type="radio" class="reading-status" name="readingStatus" value="read"><label for="readingStatus">Read</label>
+        <input type="radio" class="reading-status"  name="readingStatus" value="not-read"> <label for="readingStatus">Not Read</label>
+        <button id="add" type="submit">Add</button>
+        <button id="hide" type="submit">close</button>
+  
+      </dialog>
+    </div>
+  </div>
+</div>
+<footer>&copy; 2021 Kindle Library, Inc.</footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
